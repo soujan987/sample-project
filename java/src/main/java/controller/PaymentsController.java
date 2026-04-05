@@ -78,6 +78,7 @@ public class PaymentsController {
 
     private static CheckoutApiException parseException(Exception e) {
         if (e.getCause() instanceof CheckoutApiException) {
+            System.out.println(e.getCause());
             return (CheckoutApiException) e.getCause();
         }
         return new CheckoutApiException(HttpStatus.BAD_REQUEST_400, null, null);
